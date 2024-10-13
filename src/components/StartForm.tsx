@@ -1,16 +1,23 @@
 import { SafeAreaView, View, Text, StyleSheet, TextInput, Clipboard, Pressable } from "react-native";
 import React, { useState } from 'react';
-import StartForm from './components/StartForm'
-function Main(): React.JSX.Element {
+
+function StartForm(): React.JSX.Element {
     
     return (
-        <SafeAreaView>
-            <StartForm></StartForm>
-        </SafeAreaView>
+        <View>
+            <View style={styles.OverView}>
+                <Text></Text>
+                <TextInput inputMode="text" maxLength={50} onChange={(txt) => console.log(txt)} style = {styles.bar}/>
+            </View>
+            <View style={styles.OverView}>
+            <Text></Text>
+            <TextInput inputMode="text" maxLength={50} onChange={(txt) => console.log(txt)} style = {styles.bar}/>
+        </View>
+        </View>
     );
 }
 
-export default Main;
+export default StartForm;
 
 const styles = StyleSheet.create(
 
