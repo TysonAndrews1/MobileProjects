@@ -88,9 +88,9 @@ const TEST_DATA : Array<TransactionEntry> = [
 ];
 
 // Uncomment line 91 and comment line 93 while developing the application to test the UI.
-// const TRANSACTION_DATA : Array<TransactionEntry> = TEST_DATA;
+// export const TRANSACTION_DATA : Array<TransactionEntry> = TEST_DATA;
 
-const TRANSACTION_DATA : Array<TransactionEntry> = [];
+export const TRANSACTION_DATA : Array<TransactionEntry> = [];
 
 /**
  * 
@@ -107,10 +107,17 @@ export function getInitialData() : Array<TransactionEntry> {
  */
 export function addEditTransaction(entry : TransactionEntry) {
     const currIdx = getIndex(entry);
+    console.log(entry.amount);
+    
     if(currIdx != -1) {
+        console.log(TRANSACTION_DATA[currIdx]);
         TRANSACTION_DATA.splice(currIdx,1);
+
+
+        
     }
     TRANSACTION_DATA.push(entry);
+    console.log(TRANSACTION_DATA[TRANSACTION_DATA.length-1]);
 }
 
 /**
@@ -160,3 +167,9 @@ export function getNewID() : string {
     console.log(`ID is : ${id}`);
     return id;
 }
+
+export type RootStackParamList = {
+    Home: undefined;
+    Details: { transaction: TransactionEntry };
+    Edit: { transaction: TransactionEntry };
+  };

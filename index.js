@@ -5,6 +5,6 @@
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
 
-import Appl from './lab-5/App';
+import NavigationApp from './nav-assignment/App';
 
-AppRegistry.registerComponent(appName, () => Appl);
+AppRegistry.registerComponent(appName, () => NavigationApp);
